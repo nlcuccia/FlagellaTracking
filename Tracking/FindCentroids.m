@@ -1,10 +1,16 @@
 function [centroids, MajorAxis, hysfin] = FindCentroids(dataFolder)
 
-DIR = dataFolder;
+% Import File
+dir_0 = dataFolder;
+dir_0 = 'C:\Users\Nicholas\Documents\GitHub\FlagellaTracking\Stacks_rep3';
+
+
+
 %Make sure to not use dir twice
-S = dir(fullfile(DIR, 'img_*.mat'));
+S = dir(fullfile(dir_0, 'img_*.mat'));
+
 timepoints = numel(S);
-timepoints = 10;
+
 Labels = cell(timepoints, 1);
 s1 = cell(timepoints, 1);
 hys = cell(timepoints, 1);
@@ -44,7 +50,7 @@ for k = 1:timepoints
 
     clear hys
     clear I1
-    display(sprintf('Finished frame number %.01d', k))
+    fprintf('Finished frame number %.01d\n', k)
 end
 
 centroids = cell(timepoints, 1);

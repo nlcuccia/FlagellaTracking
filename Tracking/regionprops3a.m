@@ -33,10 +33,10 @@ function output = regionprops3a( input, varargin )
 %  Version 1.1.1
 %  Copyright 2014 Chaoyuan Yeh
     
-if any(strcmpi(varargin,'IsPixList'));
+if any(strcmpi(varargin,'IsPixList'))
     if isstruct(input)
         pixList = input;
-    elseif length(size(input))== 2 && size(input,2) == 3;
+    elseif length(size(input))== 2 && size(input,2) == 3
         pixList.pixList = input;
     else
         error('Pixel list should be either an Mx3 matrix or a structured array of Mx3 matrix');
